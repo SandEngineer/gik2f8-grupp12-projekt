@@ -11,99 +11,93 @@
   <link rel="shortcut icon"
         href="data:image/x-icon;"
         type="image/x-icon" />
-  <title>Todo-applikation</title>
+  <title>Varulista</title>
+  <style>
+    main {
+      background-image: url('img/pexels-karolina-grabowska-4210860.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    </style> 
 </head>
 
 <body>
-  <main id="root"
-        class="pt-24 bg-slate-200">
-    <h1 class="text-center mb-10 text-7xl text-black">Varulista</h1>
-    <!-- Sektion som gör att formuläret och listan kommer att hamna bredvid varandra. -->
-    <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto bg-white bg-opacity-75 p-5 rounded-lg">
-      <!-- Sektion för formuläret -->
-      <section class="flex-1">
-        <h2 class="mb-6 text-3xl text-black">Lägg till vara</h2>
-        <!-- Formuläret är döpt till todoForm och det namnet kan användas för att söka fram formuläret direkt i JavaScript-koden. -->
-        <form id="todoForm"
-              name="todoForm">
-          <section class="mb-2">
-            <label class="block pr-5 mb-2 text-xl"
-                   for="item">Vara</label>
-            <!-- Detta p-element är dolt från början med hjälp av tailwinds klass "hidden". Det kommer sedan att visas vid valideringsfel.
-            
-            P-elementet är previousSiblingElement till inputfälten. Det gäller för alla efterföljande p-element som ligger innan ett input-fält. Detta faktum används i script.js 
-            när ett valideringsmeddelande ska sättas här. -->
-            <p class="message text-sm text-red-700 mb-2 hidden">
-              Error message
-            </p>
-            <!-- Även benämningen på formulärets fält är av relevans eftersom de sätts som egenskap på formulärobjektet i JavaScript. Fältet nedan går alltså att nå via todoForm.title. 
-              Detta gäller även för efterföljande fält, fast via deras namn förstås. Detta gör att det är viktigt att man sätter id och name på fälten till något som är ett godkänt 
-              variabelnamn i JavaScript, alltså inte använda bindestreck eller mellanslag. -->
-            <input type="text"
-                   id="item"
-                   name="item"
-                   class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
-          </section>
-          <!-- Följande sektioner är likadana för övriga fält i formuläret; description och dueDate -->
-          <section class="mb-2">
-            <label class="block pr-5 mb-2 text-xl"
-                   for="brand">Märke</label>
-            <p class="message text-sm text-red-700 mb-2 hidden">
-              Error message
-            </p>
-            <input type="text"
-                   id="brand"
-                   name="brand"
-                   class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
-          </section>
-          <section class="mb-2">
-            <label class="block pr-5 mb-2 text-xl"
-                   for="size">Storlek</label>
-            <p class="message text-sm text-red-700 mb-2 hidden">
-              Error message
-            </p>
-            <input type="text"
-                   id="size"
-                   name="size"
-                   class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
-          </section>
-          <section class="mb-2">
-            <label class="block pr-5 mb-2 text-xl"
-                   for="color">Färg</label>
-            <p class="message text-sm text-red-700 mb-2 hidden">
-              Error message
-            </p>
-            <input type="text"
-                   id="color"
-                   name="color"
-                   class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
-          </section>
-          <section class="mb-2">
-            <label class="block pr-5 mb-2 text-xl"
-                   for="price">Pris</label>
-            <p class="message text-sm text-red-700 mb-2 hidden">
-              Error message
-            </p>
-            <input type="text"
-                   id="price"
-                   name="price"
-                   class="w-full rounded-md border-yellow-500 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
-          </section>
-          <!-- Knappen är av typen submit för att den ska vara knuten till formulärets submit-event.  -->
-          <button name="submitTodoForm"
-                  class="rounded-md bg-yellow-500 hover:bg-yellow-400 px-4 py-1"
-                  type="submit">
-            Lägg till
-          </button>
-        </form>
-      </section>
-      <!-- Sektion där listan med uppgifter ska bo. Placeras bredvid formuläret. -->
-      <section class="flex-1 px-5">
-        <h2 class="mb-6 text-3xl text-black">Varor i lager</h2>
-        <!-- Ul-element som kommer att fyllas på dynamiskt med li-element för varje uppgift i listan -->
-        <ul id="todoList">
-          <!-- Allt innanför här ska skapas dynamiskt med JavaScript, så se till att inget list-element läggs till här i denna HTML-fil.  -->
-        </ul>
+  <main id="root">
+    <section class="bg-slate-700 pt-24 bg-opacity-60 min-h-screen">
+      <h1 class="text-center mb-10 text-7xl text-sky-200">Jeanslagret</h1>
+      <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto">
+        <section class="flex-1 bg-sky-100 bg-opacity-75 rounded-lg p-5">
+          <h2 class="mb-6 text-3xl text-black">Lägg till vara</h2>
+          <form id="itemForm"
+                name="itemForm">
+            <section class="mb-2">
+              <label class="block pr-5 mb-2 text-xl"
+                    for="item">Vara</label>
+              <p class="message text-sm text-red-700 mb-2 hidden">
+                Error message
+              </p>
+              <input type="text"
+                    id="item"
+                    name="item"
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+            </section>
+            <section class="mb-2">
+              <label class="block pr-5 mb-2 text-xl"
+                    for="brand">Märke</label>
+              <p class="message text-sm text-red-700 mb-2 hidden">
+                Error message
+              </p>
+              <input type="text"
+                    id="brand"
+                    name="brand"
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+            </section>
+            <section class="mb-2">
+              <label class="block pr-5 mb-2 text-xl"
+                    for="size">Storlek</label>
+              <p class="message text-sm text-red-700 mb-2 hidden">
+                Error message
+              </p>
+              <input type="text"
+                    id="size"
+                    name="size"
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+            </section>
+            <section class="mb-2">
+              <label class="block pr-5 mb-2 text-xl"
+                    for="color">Färg</label>
+              <p class="message text-sm text-red-700 mb-2 hidden">
+                Error message
+              </p>
+              <input type="text"
+                    id="color"
+                    name="color"
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+            </section>
+            <section class="mb-2">
+              <label class="block pr-5 mb-2 text-xl"
+                    for="price">Pris</label>
+              <p class="message text-sm text-red-700 mb-2 hidden">
+                Error message
+              </p>
+              <input type="text"
+                    id="price"
+                    name="price"
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+            </section>
+            <button name="submitItemForm"
+                    class="rounded-md bg-orange-600 hover:bg-yellow-400 px-4 py-1"
+                    type="submit">
+              Lägg till
+            </button>
+          </form>
+        </section>
+        <section class="flex-1 bg-sky-100 bg-opacity-75 rounded-lg p-5">
+          <h2 class="mb-6 text-3xl text-black">Varor i lager</h2>
+          <ul id="itemList">
+          </ul>
+        </section>
       </section>
     </section>
   </main>
