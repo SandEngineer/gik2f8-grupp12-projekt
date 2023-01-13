@@ -25,12 +25,14 @@
 <body>
   <main id="root">
     <section class="bg-slate-700 pt-24 bg-opacity-60 min-h-screen">
-      <h1 class="text-center mb-10 text-7xl text-sky-200">Jeanslagret</h1>
+      <h1 class="text-center mb-10 text-7xl font-bold text-sky-200">Jeanslagret</h1>
       <section class="flex gap-10 w-full xl:w-4/5 mx-2 xl:mx-auto">
+        <!-- Inputfält -->
         <section class="flex-1 bg-sky-100 bg-opacity-75 rounded-lg p-5">
-          <h2 class="mb-6 text-3xl text-black">Lägg till vara</h2>
+          <h2 class="mb-6 text-3xl font-semibold text-slate-800">Lägg till vara</h2>
           <form id="itemForm"
-                name="itemForm">
+          name="itemForm">
+            <!-- Vara -->
             <section class="mb-2">
               <label class="block pr-5 mb-2 text-xl"
                     for="item">Vara</label>
@@ -40,8 +42,9 @@
               <input type="text"
                     id="item"
                     name="item"
-                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-500 px-4 py-2" />
             </section>
+            <!-- Märke -->
             <section class="mb-2">
               <label class="block pr-5 mb-2 text-xl"
                     for="brand">Märke</label>
@@ -51,8 +54,9 @@
               <input type="text"
                     id="brand"
                     name="brand"
-                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-500 px-4 py-2" />
             </section>
+            <!-- Storlek -->
             <section class="mb-2">
               <label class="block pr-5 mb-2 text-xl"
                     for="size">Storlek</label>
@@ -62,8 +66,9 @@
               <input type="text"
                     id="size"
                     name="size"
-                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-500 px-4 py-2" />
             </section>
+            <!-- Färg -->
             <section class="mb-2">
               <label class="block pr-5 mb-2 text-xl"
                     for="color">Färg</label>
@@ -73,8 +78,9 @@
               <input type="text"
                     id="color"
                     name="color"
-                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-500 px-4 py-2" />
             </section>
+            <!-- Pris -->
             <section class="mb-2">
               <label class="block pr-5 mb-2 text-xl"
                     for="price">Pris</label>
@@ -84,17 +90,19 @@
               <input type="text"
                     id="price"
                     name="price"
-                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-600 px-4 py-2" />
+                    class="w-full rounded-md border-orange-300 border-2 focus-within:outline-none focus:border-yellow-500 px-4 py-2" />
             </section>
+            <!-- Knapp -->
             <button name="submitItemForm"
-                    class="rounded-md bg-orange-600 hover:bg-yellow-400 px-4 py-1"
+                    class="rounded-md bg-orange-500 hover:bg-orange-400 px-4 py-1"
                     type="submit">
               Lägg till
             </button>
           </form>
         </section>
+        <!-- Varulista -->
         <section class="flex-1 bg-sky-100 bg-opacity-75 rounded-lg p-5">
-          <h2 class="mb-6 text-3xl text-black">Varor i lager</h2>
+          <h2 class="mb-6 text-3xl font-semibold text-slate-800">Varor i lager</h2>
           <ul id="itemList">
           </ul>
         </section>
